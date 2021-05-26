@@ -5,6 +5,9 @@ metadata:
   name: process-item-{{ . }}
   labels:
     jobgroup: jobexample
+  annotations:
+    "helm.sh/hook": post-install, post-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded    
 spec:
   template:
     metadata:
